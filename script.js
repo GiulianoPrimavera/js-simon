@@ -37,7 +37,7 @@ alert("memorizza questi numeri ->  " + numeriRandom);
 
 setTimeout(() => {
     //chiedo all'utente di inserire i numeri che verranno salvati come stringa 
-    let stringaUtente = prompt("inserisci i numeri che hai visto prima separati da ");
+    let stringaUtente = prompt("inserisci i numeri che hai visto prima separati da virgole");
     //divido la stigna in un array di stringhe
     const arrayUtenteString = stringaUtente.split(",")
     
