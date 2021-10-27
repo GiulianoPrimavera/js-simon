@@ -5,7 +5,7 @@
    // -function generateRandomNum
    // -creo un array con i numeri random
    //-li mando a schermo con un alert
--avvio un timer di 30s
+//-avvio un timer di 30s
 -chiedo con un prompt all'utente di inserire i numeri che ha visto prima a schermo
 */
 
@@ -30,5 +30,22 @@ let numeriRandom = [];
 for (let i = 0; i < 5; i++){
     numeriRandom.push(getRandomNumber())
 }
+console.log("numeri random", numeriRandom);
 //mando a schermo l'array contenente i numeri random
 alert("memorizza questi numeri ->  " + numeriRandom);
+
+
+setTimeout(() => {
+    //chiedo all'utente di inserire i numeri che verranno salvati come stringa 
+    let stringaUtente = prompt("inserisci i numeri che hai visto prima separati da ");
+    //divido la stigna in un array di stringhe
+    const arrayUtenteString = stringaUtente.split(",")
+    
+    //creo un array di numeri
+    let arrayUtenteNumbers = [];
+    for (let i = 0; i < arrayUtenteString.length; i++){
+        //per ogni elemento all'interno dell'array di stringhe pusho il relativo numero
+        arrayUtenteNumbers.push(parseInt(arrayUtenteString[i]))
+    }
+    console.log("array dell'utente", arrayUtenteNumbers);
+}, 300);
