@@ -48,4 +48,10 @@ setTimeout(() => {
         arrayUtenteNumbers.push(parseInt(arrayUtenteString[i]))
     }
     console.log("array dell'utente", arrayUtenteNumbers);
+
+    if (numeriRandom.length !== arrayUtenteNumbers.length){
+        alert("puoi inserire solo 5 numeri")
+    }else{
+        
+    } 
 }, 300);
