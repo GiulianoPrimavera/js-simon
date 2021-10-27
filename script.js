@@ -49,9 +49,30 @@ setTimeout(() => {
     }
     console.log("array dell'utente", arrayUtenteNumbers);
 
+    //se le lunghezze dell'array dei numeri indovinati e dell'array dei numeri random sono diverse mostro questo messaggio
     if (numeriRandom.length !== arrayUtenteNumbers.length){
-        alert("puoi inserire solo 5 numeri")
+        alert("devi inserire solo e soltanto 5 numeri")
     }else{
+        //creo un array che conterrà i numeri indovinati dall'utente
+        let arrayNumeriIndovinati = [];
+
+        //ciclo sull'array dei numeri inseriti dall'utente
+        for(let i = 0; i < arrayUtenteNumbers.length; i++){
+            //se il numero (nella posizione [i]) inserito dall'utente è incluso nell'array dei numeri generati randomicamente
+            if(numeriRandom.includes(arrayUtenteNumbers[i])){
+                //eseguo il push del numero all'interno dell'array dei numeri indovinati
+                arrayNumeriIndovinati.push(arrayUtenteNumbers[i]);
+            }
+        }
+
+        //creo una stringa a partire dall'array dei numeri indovinati, che sarà inserità nell'alert finale
+        const numeriIndovinatiString = arrayNumeriIndovinati.join(", ")
         
+        if(arrayNumeriIndovinati.length === 0){
+            alert("non hai indovinato nessun numero :(")
+        }else{
+            //mando a schermo il messaggio di quanti numeri sono stati indovinati e quali
+            alert("hai indovinato " + arrayNumeriIndovinati.length + " numeri, e sono " + numeriIndovinatiString)
+        }
     } 
 }, 300);
